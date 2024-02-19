@@ -1,0 +1,32 @@
+[
+{
+  "directory": "/home/lewis/cpp/projects/games/Space_Blitz/build",
+  "command": "/usr/bin/g++   -g -std=gnu++11 -o CMakeFiles/Space_Blitz.dir/src/main.cpp.o -c /home/lewis/cpp/projects/games/Space_Blitz/src/main.cpp",
+  "file": "/home/lewis/cpp/projects/games/Space_Blitz/src/main.cpp"
+},
+{
+  "directory": "/home/lewis/cpp/projects/games/Space_Blitz/build",
+  "command": "/usr/bin/g++   -g -std=gnu++11 -o CMakeFiles/Space_Blitz.dir/src/Game.cpp.o -c /home/lewis/cpp/projects/games/Space_Blitz/src/Game.cpp",
+  "file": "/home/lewis/cpp/projects/games/Space_Blitz/src/Game.cpp"
+},
+{
+  "directory": "/home/lewis/cpp/projects/games/Space_Blitz/build",
+  "command": "/usr/bin/g++   -g -std=gnu++11 -o CMakeFiles/Space_Blitz.dir/src/TextureManager.cpp.o -c /home/lewis/cpp/projects/games/Space_Blitz/src/TextureManager.cpp",
+  "file": "/home/lewis/cpp/projects/games/Space_Blitz/src/TextureManager.cpp"
+},
+{
+  "directory": "/home/lewis/cpp/projects/games/Space_Blitz/build",
+  "command": "/usr/bin/g++   -g -std=gnu++11 -o CMakeFiles/Space_Blitz.dir/src/GameObject.cpp.o -c /home/lewis/cpp/projects/games/Space_Blitz/src/GameObject.cpp",
+  "file": "/home/lewis/cpp/projects/games/Space_Blitz/src/GameObject.cpp"
+},
+{
+  "directory": "/home/lewis/cpp/projects/games/Space_Blitz/build",
+  "command": "/usr/bin/g++   -g -std=gnu++11 -o CMakeFiles/Space_Blitz.dir/src/Background.cpp.o -c /home/lewis/cpp/projects/games/Space_Blitz/src/Background.cpp",
+  "file": "/home/lewis/cpp/projects/games/Space_Blitz/src/Background.cpp"
+},
+{
+  "directory": "/home/lewis/cpp/projects/games/Space_Blitz/build",
+  "command": "/usr/bin/g++   -g -std=gnu++11 -o CMakeFiles/Space_Blitz.dir/src/Vector2D.cpp.o -c /home/lewis/cpp/projects/games/Space_Blitz/src/Vector2D.cpp",
+  "file": "/home/lewis/cpp/projects/games/Space_Blitz/src/Vector2D.cpp"
+}
+]

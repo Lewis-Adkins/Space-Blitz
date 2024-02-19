@@ -1,0 +1,1 @@
+/usr/bin/g++ -g -rdynamic CMakeFiles/Space_Blitz.dir/src/main.cpp.o CMakeFiles/Space_Blitz.dir/src/Game.cpp.o CMakeFiles/Space_Blitz.dir/src/TextureManager.cpp.o CMakeFiles/Space_Blitz.dir/src/GameObject.cpp.o CMakeFiles/Space_Blitz.dir/src/Background.cpp.o CMakeFiles/Space_Blitz.dir/src/Vector2D.cpp.o -o Space_Blitz  -lSDL2 -lSDL2main -lSDL2_image 
