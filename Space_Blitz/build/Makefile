@@ -153,6 +153,30 @@ src/Background.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Space_Blitz.dir/build.make CMakeFiles/Space_Blitz.dir/src/Background.cpp.s
 .PHONY : src/Background.cpp.s
 
+src/Collision.o: src/Collision.cpp.o
+.PHONY : src/Collision.o
+
+# target to build an object file
+src/Collision.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Space_Blitz.dir/build.make CMakeFiles/Space_Blitz.dir/src/Collision.cpp.o
+.PHONY : src/Collision.cpp.o
+
+src/Collision.i: src/Collision.cpp.i
+.PHONY : src/Collision.i
+
+# target to preprocess a source file
+src/Collision.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Space_Blitz.dir/build.make CMakeFiles/Space_Blitz.dir/src/Collision.cpp.i
+.PHONY : src/Collision.cpp.i
+
+src/Collision.s: src/Collision.cpp.s
+.PHONY : src/Collision.s
+
+# target to generate assembly for a file
+src/Collision.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Space_Blitz.dir/build.make CMakeFiles/Space_Blitz.dir/src/Collision.cpp.s
+.PHONY : src/Collision.cpp.s
+
 src/Game.o: src/Game.cpp.o
 .PHONY : src/Game.o
 
@@ -285,6 +309,9 @@ help:
 	@echo "... src/Background.o"
 	@echo "... src/Background.i"
 	@echo "... src/Background.s"
+	@echo "... src/Collision.o"
+	@echo "... src/Collision.i"
+	@echo "... src/Collision.s"
 	@echo "... src/Game.o"
 	@echo "... src/Game.i"
 	@echo "... src/Game.s"

@@ -20,6 +20,12 @@ Background :: Background() {
 
 }
 
+Background :: ~Background() {
+
+    SDL_DestroyTexture(bgtile_texture);
+}
+
+
 void Background::LoadBG(int arr[2][3]){
 
     for (int row = 0; row < 2; row++){

@@ -81,12 +81,12 @@ clean: CMakeFiles/Space_Blitz.dir/clean
 CMakeFiles/Space_Blitz.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Space_Blitz.dir/build.make CMakeFiles/Space_Blitz.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Space_Blitz.dir/build.make CMakeFiles/Space_Blitz.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lewis/cpp/projects/games/Space_Blitz/build/CMakeFiles --progress-num=1,2,3,4,5,6,7 "Built target Space_Blitz"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lewis/cpp/projects/games/Space_Blitz/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8 "Built target Space_Blitz"
 .PHONY : CMakeFiles/Space_Blitz.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Space_Blitz.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lewis/cpp/projects/games/Space_Blitz/build/CMakeFiles 7
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lewis/cpp/projects/games/Space_Blitz/build/CMakeFiles 8
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Space_Blitz.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/lewis/cpp/projects/games/Space_Blitz/build/CMakeFiles 0
 .PHONY : CMakeFiles/Space_Blitz.dir/rule

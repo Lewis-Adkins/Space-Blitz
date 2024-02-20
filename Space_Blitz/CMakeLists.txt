@@ -26,15 +26,18 @@ add_executable(Space_Blitz
     src/Background.cpp
     src/Background.hpp
 
+    src/Vector2D.hpp
+    src/Vector2D.cpp
+
+    src/Collision.hpp
+    src/Collision.cpp
+
     src/ECS/Components.hpp
     src/ECS/ECS.hpp
     src/ECS/TransformComponent.hpp
     src/ECS/SpriteComponent.hpp
-
-    src/Vector2D.hpp
-    src/Vector2D.cpp
-
     src/ECS/KeyboardController.hpp
+    src/ECS/ColliderComponent.hpp
 )
 
 target_link_libraries(Space_Blitz PRIVATE SDL2 SDL2main ${SDL2_IMAGE_LIBRARY})

@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/lewis/cpp/projects/games/Space_Blitz/src/Background.cpp" "CMakeFiles/Space_Blitz.dir/src/Background.cpp.o" "gcc" "CMakeFiles/Space_Blitz.dir/src/Background.cpp.o.d"
+  "/home/lewis/cpp/projects/games/Space_Blitz/src/Collision.cpp" "CMakeFiles/Space_Blitz.dir/src/Collision.cpp.o" "gcc" "CMakeFiles/Space_Blitz.dir/src/Collision.cpp.o.d"
   "/home/lewis/cpp/projects/games/Space_Blitz/src/Game.cpp" "CMakeFiles/Space_Blitz.dir/src/Game.cpp.o" "gcc" "CMakeFiles/Space_Blitz.dir/src/Game.cpp.o.d"
   "/home/lewis/cpp/projects/games/Space_Blitz/src/GameObject.cpp" "CMakeFiles/Space_Blitz.dir/src/GameObject.cpp.o" "gcc" "CMakeFiles/Space_Blitz.dir/src/GameObject.cpp.o.d"
   "/home/lewis/cpp/projects/games/Space_Blitz/src/TextureManager.cpp" "CMakeFiles/Space_Blitz.dir/src/TextureManager.cpp.o" "gcc" "CMakeFiles/Space_Blitz.dir/src/TextureManager.cpp.o.d"

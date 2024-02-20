@@ -28,5 +28,10 @@
   "directory": "/home/lewis/cpp/projects/games/Space_Blitz/build",
   "command": "/usr/bin/g++   -g -std=gnu++11 -o CMakeFiles/Space_Blitz.dir/src/Vector2D.cpp.o -c /home/lewis/cpp/projects/games/Space_Blitz/src/Vector2D.cpp",
   "file": "/home/lewis/cpp/projects/games/Space_Blitz/src/Vector2D.cpp"
+},
+{
+  "directory": "/home/lewis/cpp/projects/games/Space_Blitz/build",
+  "command": "/usr/bin/g++   -g -std=gnu++11 -o CMakeFiles/Space_Blitz.dir/src/Collision.cpp.o -c /home/lewis/cpp/projects/games/Space_Blitz/src/Collision.cpp",
+  "file": "/home/lewis/cpp/projects/games/Space_Blitz/src/Collision.cpp"
 }
 ]

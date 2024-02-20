@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/Space_Blitz.dir/src/Background.cpp.o"
   "CMakeFiles/Space_Blitz.dir/src/Background.cpp.o.d"
+  "CMakeFiles/Space_Blitz.dir/src/Collision.cpp.o"
+  "CMakeFiles/Space_Blitz.dir/src/Collision.cpp.o.d"
   "CMakeFiles/Space_Blitz.dir/src/Game.cpp.o"
   "CMakeFiles/Space_Blitz.dir/src/Game.cpp.o.d"
   "CMakeFiles/Space_Blitz.dir/src/GameObject.cpp.o"
