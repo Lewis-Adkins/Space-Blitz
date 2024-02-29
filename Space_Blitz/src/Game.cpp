@@ -106,28 +106,32 @@ void Game::update(){
     if (Collision::AABB(player.getComponent<ColliderComponent>().collider,
         border1.getComponent<ColliderComponent>().collider)){
         player.getComponent<TransformComponent>().position = playerPos;
-        player.getComponent<TransformComponent>().velocity * -1;
+        player.getComponent<TransformComponent>().position.x -= player.getComponent<TransformComponent>().velocity.x * .01;
+        player.getComponent<TransformComponent>().position.y -= player.getComponent<TransformComponent>().velocity.y * .01;
         cout << "Crashed \n";
     }
 
     if (Collision::AABB(player.getComponent<ColliderComponent>().collider,
         border2.getComponent<ColliderComponent>().collider)){
         player.getComponent<TransformComponent>().position = playerPos;
-        player.getComponent<TransformComponent>().velocity * -1;
+        player.getComponent<TransformComponent>().position.x -= player.getComponent<TransformComponent>().velocity.x * .01;
+        player.getComponent<TransformComponent>().position.y -= player.getComponent<TransformComponent>().velocity.y * .01;
         cout << "Crashed \n";
     }
 
     if (Collision::AABB(player.getComponent<ColliderComponent>().collider,
         border3.getComponent<ColliderComponent>().collider)){
         player.getComponent<TransformComponent>().position = playerPos;
-        player.getComponent<TransformComponent>().velocity * -1;
+        player.getComponent<TransformComponent>().position.x -= player.getComponent<TransformComponent>().velocity.x * .01 ;
+        player.getComponent<TransformComponent>().position.y -= player.getComponent<TransformComponent>().velocity.y * .01 ;
         cout << "Crashed \n";
     }
 
     if (Collision::AABB(player.getComponent<ColliderComponent>().collider,
         border4.getComponent<ColliderComponent>().collider)){
         player.getComponent<TransformComponent>().position = playerPos;
-        player.getComponent<TransformComponent>().velocity * -1;
+        player.getComponent<TransformComponent>().position.x -= player.getComponent<TransformComponent>().velocity.x * .01;
+        player.getComponent<TransformComponent>().position.y -= player.getComponent<TransformComponent>().velocity.y * .01 ;
         cout << "Crashed \n";
     }
 
