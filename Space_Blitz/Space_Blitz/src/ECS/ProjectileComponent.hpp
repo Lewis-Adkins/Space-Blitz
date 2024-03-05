@@ -4,4 +4,20 @@
 
 using namespace std;
 
+struct ProjectileComponent : public Component {
 
+    public:
+
+        bool Firing;
+        ProjectileComponent *projectile;
+    
+        ProjectileComponent() {
+
+        }
+
+        void init() override {
+
+            Firing = false;
+        }
+
+};

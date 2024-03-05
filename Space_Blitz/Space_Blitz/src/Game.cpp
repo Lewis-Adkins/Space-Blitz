@@ -152,6 +152,9 @@ void Game::update(){
     BossMovement(boss.getComponent<TransformComponent>().position);
 
     PlayerDamage(player.getComponent<ColliderComponent>(), boss.getComponent<ColliderComponent>());
+
+   // auto& projectile = player.getComponent<ProjectileComponent>();
+   // cout << projectile.Firing<< endl;
 }
 
 
