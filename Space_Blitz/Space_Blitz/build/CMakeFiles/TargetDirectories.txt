@@ -1,3 +1,0 @@
-/home/lewis/cpp/projects/games/Space_Blitz/build/CMakeFiles/Space_Blitz.dir
-/home/lewis/cpp/projects/games/Space_Blitz/build/CMakeFiles/edit_cache.dir
-/home/lewis/cpp/projects/games/Space_Blitz/build/CMakeFiles/rebuild_cache.dir
