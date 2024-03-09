@@ -18,11 +18,14 @@ auto& planet(manager.addEntity());
 auto& galaxy(manager.addEntity());
 
 auto& player(manager.addEntity());
+auto& boss(manager.addEntity());
 
 auto& border1(manager.addEntity());
 auto& border2(manager.addEntity());
 auto& border3(manager.addEntity());
 auto& border4(manager.addEntity());
+
+auto& laser(manager.addEntity());
 
 Game::Game() {
 
@@ -82,6 +85,19 @@ void Game::init(const char *title, int x_position, int y_position, int width, in
     player.addComponent<SpriteComponent>("/home/lewis/cpp/projects/games/Space_Blitz/assets/sprites/spaceship/states/spaceship_idle.png");
     player.addComponent<KeyboardController>();
     player.addComponent<ColliderComponent>("player");
+    player.addComponent<HealthComponent>(10);
+
+    laser.addComponent<TransformComponent>(100.0f,310.0f, 1, 1, .5);
+    laser.addComponent<SpriteComponent>("/home/lewis/cpp/projects/games/Space_Blitz/assets/sprites/spaceship/weapons/spaceship_laser.png");
+    laser.addComponent<ColliderComponent>("laser");
+    laser.addComponent<ProjectileComponent>(10, 10, Vector2D{10,0});
+
+    boss.addComponent<TransformComponent>(610.0f, 200.0f, 500,600, 1);
+    boss.addComponent<SpriteComponent>("/home/lewis/cpp/projects/games/Space_Blitz/assets/sprites/boss/boss.png");
+    boss.addComponent<ColliderComponent>("boss");
+    boss.addComponent<HealthComponent>(100);
+
+     Uint32 laserSpawnTimer;
 }
 
 void Game::handleEvents(){
@@ -98,44 +114,80 @@ void Game::handleEvents(){
     }
 }
 
+void BossMovement(const Vector2D& bossPos) {
+    auto& transform = boss.getComponent<TransformComponent>();
+    Uint64 index = SDL_GetPerformanceCounter();
+
+    transform.position = bossPos;
+    transform.position.y = 175 * sin(10e-10 * index) + 130;
+    //cout << index << endl;
+}
+
+void handleborderCollision(const ColliderComponent& playerCollider, const ColliderComponent& borderCollider, const Vector2D& playerPos) {
+    if (Collision::AABB(playerCollider.collider, borderCollider.collider)) {
+        auto& transform   = player.getComponent<TransformComponent>();
+        double delta_time = 0;
+
+        Uint64 LAST = SDL_GetPerformanceCounter();
+        Uint64 NOW  = SDL_GetPerformanceCounter();
+
+        delta_time  = (double)((NOW - LAST) * 1000 / (double)(SDL_GetPerformanceFrequency()));
+
+        transform.position = playerPos;
+        transform.position.x -= transform.velocity.x * delta_time;
+        transform.position.y -= transform.velocity.y * delta_time;
+        //cout << "Border hit!" << endl;
+    }
+}
+
+void PlayerDamage(const ColliderComponent& playerCollider, const ColliderComponent& enemyCollider){
+    if (Collision::AABB(playerCollider.collider, enemyCollider.collider)) {
+        auto& transform = player.getComponent<HealthComponent>();
+        transform.health --;
+        cout << transform.health << endl;
+    }
+}
+
+void laserTrajectory(const Vector2D laserPos, const double speed ) {
+
+    auto& transform = laser.getComponent<TransformComponent>();
+    transform.position = laserPos;
+    transform.position.x += speed;
+
+}
+
 void Game::update(){
+    int laserSpawnTimer = 0;
     Vector2D playerPos = player.getComponent<TransformComponent>().position;
     manager.refresh();
     manager.update();
 
-    if (Collision::AABB(player.getComponent<ColliderComponent>().collider,
-        border1.getComponent<ColliderComponent>().collider)){
-        player.getComponent<TransformComponent>().position = playerPos;
-        player.getComponent<TransformComponent>().position.x -= player.getComponent<TransformComponent>().velocity.x * .01;
-        player.getComponent<TransformComponent>().position.y -= player.getComponent<TransformComponent>().velocity.y * .01;
-        cout << "Crashed \n";
+    handleborderCollision(player.getComponent<ColliderComponent>(), border1.getComponent<ColliderComponent>(), playerPos);
+    handleborderCollision(player.getComponent<ColliderComponent>(), border2.getComponent<ColliderComponent>(), playerPos);
+    handleborderCollision(player.getComponent<ColliderComponent>(), border3.getComponent<ColliderComponent>(), playerPos);
+    handleborderCollision(player.getComponent<ColliderComponent>(), border4.getComponent<ColliderComponent>(), playerPos);
+
+    BossMovement(boss.getComponent<TransformComponent>().position);
+
+    PlayerDamage(player.getComponent<ColliderComponent>(), boss.getComponent<ColliderComponent>());
+
+    if (SDL_GetTicks() - laserSpawnTimer >= 5000) {
+        // Spawn a laser at the player's position
+        auto& newLaser(manager.addEntity());
+        newLaser.addComponent<TransformComponent>(playerPos.x + 40, playerPos.y + 35, 50, 50, 1);
+        newLaser.addComponent<SpriteComponent>("/home/lewis/cpp/projects/games/Space_Blitz/assets/sprites/spaceship/weapons/spaceship_laser.png");
+        newLaser.addComponent<ColliderComponent>("player");
+        newLaser.addComponent<ProjectileComponent>(10, 10, Vector2D{5, 0});
+
+        //laserTrajectory(newLaser.getComponent<TransformComponent>().position, 5);
+        // Reset the timer
+        laserSpawnTimer = SDL_GetTicks();
     }
 
-    if (Collision::AABB(player.getComponent<ColliderComponent>().collider,
-        border2.getComponent<ColliderComponent>().collider)){
-        player.getComponent<TransformComponent>().position = playerPos;
-        player.getComponent<TransformComponent>().position.x -= player.getComponent<TransformComponent>().velocity.x * .01;
-        player.getComponent<TransformComponent>().position.y -= player.getComponent<TransformComponent>().velocity.y * .01;
-        cout << "Crashed \n";
-    }
-
-    if (Collision::AABB(player.getComponent<ColliderComponent>().collider,
-        border3.getComponent<ColliderComponent>().collider)){
-        player.getComponent<TransformComponent>().position = playerPos;
-        player.getComponent<TransformComponent>().position.x -= player.getComponent<TransformComponent>().velocity.x * .01 ;
-        player.getComponent<TransformComponent>().position.y -= player.getComponent<TransformComponent>().velocity.y * .01 ;
-        cout << "Crashed \n";
-    }
-
-    if (Collision::AABB(player.getComponent<ColliderComponent>().collider,
-        border4.getComponent<ColliderComponent>().collider)){
-        player.getComponent<TransformComponent>().position = playerPos;
-        player.getComponent<TransformComponent>().position.x -= player.getComponent<TransformComponent>().velocity.x * .01;
-        player.getComponent<TransformComponent>().position.y -= player.getComponent<TransformComponent>().velocity.y * .01 ;
-        cout << "Crashed \n";
-    }
-
+   // auto& projectile = player.getComponent<ProjectileComponent>();
+   // cout << projectile.Firing<< endl;
 }
+
 
 void Game::render(){
     SDL_RenderClear(renderer);

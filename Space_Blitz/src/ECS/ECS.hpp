@@ -77,7 +77,7 @@ class Entity {
 
         }
         bool isActive() const { return active;}
-        void destroy() { active = false;}
+        void destroy() { active = true;}
 
         template <typename T> bool hasComponent() const {
 

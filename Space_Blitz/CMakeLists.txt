@@ -38,6 +38,7 @@ add_executable(Space_Blitz
     src/ECS/SpriteComponent.hpp
     src/ECS/KeyboardController.hpp
     src/ECS/ColliderComponent.hpp
+    src/ECS/Health.hpp
 )
 
 target_link_libraries(Space_Blitz PRIVATE SDL2 SDL2main ${SDL2_IMAGE_LIBRARY})

@@ -4,3 +4,5 @@
 #include "SpriteComponent.hpp"
 #include "KeyboardController.hpp"
 #include "ColliderComponent.hpp"
+#include "Health.hpp"
+#include "ProjectileComponent.hpp"
